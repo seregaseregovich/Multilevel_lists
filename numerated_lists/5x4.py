@@ -15,25 +15,48 @@ v = 0  # vertical moving:
         # -1 - up
 n = 1
 
-while m[i][j] == 0:
-    m[i][j] = n
-    n += 1
-    if n <= 25:
-        if j + h == len(m[i]) or m[i + v][j + h] != 0:
+while n <= 25:
+    if m[i][j] == 0:
+        m[i][j] = n
+        n += 1
+        if j + h == len(m[i]):
             h = 0
             v = 1
-        elif i + v == len(m)-1 or m[i + v][j + h] != 0:
+        elif i + v == len(m):
             h = -1
             v = 0
-        elif j + h == -1 or m[i + v][j + h] != 0:
+        elif j + h == -1:
             h = 0
             v = -1
-        elif i + v == -1 or m[i + v][j + h] != 0:
+        elif i + v == -1:
             h = 1
             v = 0
-        i += v
-        j += h
     else:
-        break
+        if h == 1 and v == 0 and m[i][j] != 0:
+            h = 0
+            v = 1
+            i += v
+            j += h
+            continue
+        elif h == 0 and v == 1 and m[i][j] != 0:
+            h = -1
+            v = 0
+            i += v
+            j += h
+            continue
+        elif h == -1 and v == 0 and m[i][j] != 0:
+            h = 0
+            v = -1
+            i += v
+            j += h
+            continue
+        elif h == 0 and v == -1 and m[i][j] != 0:
+            h = 1
+            v = 0
+            i += v
+            j += h
+            continue
+    i += v
+    j += h
 for i in m:
     print(i)
