@@ -32,25 +32,25 @@ while n <= 25:
             h = 1
             v = 0
     else:
-        if h == 1 and v == 0 and m[i][j] != 0:
+        if (h == 1 and v == 0) and m[i][j] != 0:
             h = 0
             v = 1
             i += v
             j += h
             continue
-        elif h == 0 and v == 1 and m[i][j] != 0:
+        elif (h == 0 and v == 1) and m[i][j] != 0:
             h = -1
             v = 0
             i += v
             j += h
             continue
-        elif h == -1 and v == 0 and m[i][j] != 0:
+        elif (h == -1 and v == 0) and m[i][j] != 0:
             h = 0
             v = -1
             i += v
             j += h
             continue
-        elif h == 0 and v == -1 and m[i][j] != 0:
+        elif (h == 0 and v == -1) and m[i][j] != 0:
             h = 1
             v = 0
             i += v
