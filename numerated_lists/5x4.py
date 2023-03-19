@@ -1,13 +1,13 @@
 ''' Creating matrix (size = AxB),
 filled with numbers from 1 to matrix size (A*B). '''
 
-# Stage 1: creating matrix
-a = int(input('Enter horizontal matrix size: '))
-b = int(input('Enter vertical matrix size: '))
+# Stage 1: creating matrix.
+a = int(input('Enter horizontal matrix size (integer number): '))
+b = int(input('Enter vertical matrix size (integer number): '))
 m = [[0] * a for i in range(b)]
 # Creating initial conditions (position and direction)
 # for initial and further enumeration and filling of matrix
-# cells. Initial position is left-upper cell of matrix.
+# cells. Initial position is left-upper cell of the matrix.
 x = -1
 y = 0
 dx = 1
