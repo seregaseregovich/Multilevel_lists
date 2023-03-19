@@ -3,60 +3,37 @@ m = [[0 for i in range(5)] for j in range(4)]
 # m = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 for i in m:
     print(i)  # printing m
-i = 0  # index i
-j = 0  # index j
-h = 1  # horisontal moving:
+x = -1  # initial position in the column (horisontal moving)
+y = 0  # initial position in the string (vertical moving)
+dx = 1  # moving in the column (horisontal moving):
         # +1 - to the right
         # 0 - no move
         # -1 - to the left
-v = 0  # vertical moving:
+dy = 0  # moving in the string (vertical moving):
         # +1 - down
         # 0 - no move
         # -1 - up
 n = 1
 
 while n <= 25:
-    if m[i][j] == 0:
-        m[i][j] = n
+    if 0 <= x + dx <= len(m[x]) and 0 <= y + dy <= len(m) and m[y + dy][x + dx] == 0:
+        x += dx
+        y += dy
+        m[y][x] = n
         n += 1
-        if j + h == len(m[i]):
-            h = 0
-            v = 1
-        elif i + v == len(m):
-            h = -1
-            v = 0
-        elif j + h == -1:
-            h = 0
-            v = -1
-        elif i + v == -1:
-            h = 1
-            v = 0
     else:
-        if (h == 1 and v == 0) and m[i][j] != 0:
-            h = 0
-            v = 1
-            i += v
-            j += h
-            continue
-        elif (h == 0 and v == 1) and m[i][j] != 0:
-            h = -1
-            v = 0
-            i += v
-            j += h
-            continue
-        elif (h == -1 and v == 0) and m[i][j] != 0:
-            h = 0
-            v = -1
-            i += v
-            j += h
-            continue
-        elif (h == 0 and v == -1) and m[i][j] != 0:
-            h = 1
-            v = 0
-            i += v
-            j += h
-            continue
-    i += v
-    j += h
+        if dx == 1 and dy == 0:
+            dx = 0
+            dy = 1
+        elif dx == 0 and dy == 1:
+            dx = -1
+            dy = 0
+        elif dx == -1 and dy == 0:
+            dx = 0
+            dy = -1
+        elif dx == 0 and dy == -1:
+            dx = 1
+            dy = 0
 for i in m:
     print(i)
+
