@@ -7,7 +7,7 @@ b = int(input('Enter vertical matrix size (integer number): '))
 m = [[0] * a for i in range(b)]
 # Stage 2. Creating initial conditions (position and direction)
 # for initial and further enumeration and filling of matrix
-# cells. Initial position is left-upper cell of the matrix.
+# cells. Initial position is left-upper cell of the matrix (m[0][0]).
 x = -1  # position x (index)
 y = 0  # position y (index)
 dx = 1  # direction x (1 - right, 0 - no move, -1 - left)
