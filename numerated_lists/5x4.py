@@ -15,23 +15,23 @@ dy = 0  # moving in the string (vertical moving):
         # -1 - up
 n = 1
 
-while n <= 25:
-    if 0 <= x + dx <= len(m[x]) and 0 <= y + dy <= len(m) and m[y + dy][x + dx] == 0:
+while n <= 20:
+    if 0 <= x + dx < len(m[0]) and 0 <= y + dy < len(m) and m[y + dy][x + dx] == 0:
         x += dx
         y += dy
         m[y][x] = n
         n += 1
     else:
-        if dx == 1 and dy == 0:
+        if dx == 1:
             dx = 0
             dy = 1
-        elif dx == 0 and dy == 1:
+        elif dy == 1:
             dx = -1
             dy = 0
-        elif dx == -1 and dy == 0:
+        elif dx == -1:
             dx = 0
             dy = -1
-        elif dx == 0 and dy == -1:
+        elif dy == -1:
             dx = 1
             dy = 0
 for i in m:
