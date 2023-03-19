@@ -8,13 +8,13 @@ m = [[0] * a for i in range(b)]
 # Stage 2. Creating initial conditions (position and direction)
 # for initial and further enumeration and filling of matrix
 # cells. Initial position is left-upper cell of the matrix.
-x = -1
-y = 0
-dx = 1
-dy = 0
-n = 1
+x = -1  # position x (index)
+y = 0  # position y (index)
+dx = 1  # direction x (1 - right, 0 - no move, -1 - left)
+dy = 0  # direction y (1 - down, 0 - no move, -1 - up)
+n = 1  # content of first matrix cell (m[0][0])
 # Stage 3. Implementation of control over the excess
-# of the upper value of the matrix content
+# of the upper value of the matrix content (condition for loop exit).
 while n <= a * b:
     # Stage 4. Implementation of control over feeling the free cells.
     # Implementation of control over the formation
