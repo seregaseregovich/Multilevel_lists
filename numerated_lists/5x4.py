@@ -27,8 +27,8 @@ while n <= a * b:
         n += 1
     else:
         # Stage 5. Implementation of conditions for changing
-        # the directions of moving due to impossibility
-        # of fulfilling the previous conditions.
+        # the direction of movement due to impossibility
+        # of fulfilling the previous conditions in line 22-27.
         if dx == 1:
             dx = 0
             dy = 1
